@@ -15,27 +15,63 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Sub Activity 1"
+        android:text="Sum"
         android:id="@+id/Sub1"
-        android:layout_marginStart="28dp"
+        android:layout_below="@+id/txtTong"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="47dp"
+        android:onClick="sumNumber" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Number 1"
+        android:id="@+id/txtSo1"
+        android:layout_marginTop="30dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true" />
 
-    <Button
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Sub Activity 2"
-        android:id="@+id/button2"
-        android:layout_marginStart="26dp"
-        android:layout_alignParentTop="true"
-        android:layout_toEndOf="@+id/Sub1" />
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Number 2"
+        android:id="@+id/txtSo2"
+        android:layout_below="@+id/txtSo1"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="25dp" />
 
-    <Button
+    <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New Button"
-        android:id="@+id/button3"
-        android:layout_marginTop="28dp"
-        android:layout_below="@+id/Sub1"
-        android:layout_toStartOf="@+id/button2" />
+        android:id="@+id/editText1"
+        android:layout_above="@+id/txtSo2"
+        android:layout_toEndOf="@+id/txtSo1" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText2"
+        android:layout_alignBottom="@+id/txtSo2"
+        android:layout_toEndOf="@+id/Tong" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Tong "
+        android:id="@+id/txtTong"
+        android:layout_below="@+id/txtSo2"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="24dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:id="@+id/Tong"
+        android:layout_alignBottom="@+id/txtTong"
+        android:layout_toEndOf="@+id/txtSo2" />
+
 </RelativeLayout>

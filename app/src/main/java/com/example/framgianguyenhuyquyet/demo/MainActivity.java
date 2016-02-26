@@ -11,6 +11,8 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
@@ -31,23 +33,40 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        Button btn1 = (Button) findViewById(R.id.Sub1);
+//        Button btn1 = (Button) findViewById(R.id.Sub1);
+//
+//        btn1.setOnClickListener(new View.OnClickListener() {
+//            public void onClick(View arg0) {
+//                Intent intent = new Intent(MainActivity.this, SubActivity1.class);
+//                startActivity(intent);
+//            }
+//        });
 
-        btn1.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View arg0) {
-                Intent intent = new Intent(MainActivity.this, SubActivity1.class);
-                startActivity(intent);
-            }
-        });
+//        Button btn2 = (Button) findViewById(R.id.button2);
+//        btn2.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(MainActivity.this, SubActivity2.class);
+//                startActivity(intent);
+//            }
+//        });
 
-        Button btn2 = (Button) findViewById(R.id.button2);
-        btn2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, SubActivity2.class);
-                startActivity(intent);
-            }
-        });
+    }
+
+    public void sumNumber(View view){
+        EditText edit1 = (EditText) findViewById(R.id.editText1);
+        EditText edit2 = (EditText) findViewById(R.id.editText2);
+        TextView txt1 = (TextView) findViewById(R.id.Tong);
+        int a,b;
+        try {
+             a = Integer.parseInt(edit1.getText().toString());
+             b = Integer.parseInt(edit2.getText().toString());
+        }
+        catch (Exception e){
+             a =1;
+             b= 1;
+        }
+        txt1.setText(String.valueOf(a+b));
     }
 
     @Override
