@@ -1,5 +1,7 @@
 package com.example.framgianguyenhuyquyet.demo;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.app.Activity;
@@ -10,12 +12,24 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
+    Button btnNhap;
+    ListView lv;
+    TextView txtSelection;
+    EditText editNhap;
+    ArrayList<String> danhsach = null;
+    ArrayAdapter<String> adapter = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,60 +46,28 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
-
-//        Button btn1 = (Button) findViewById(R.id.Sub1);
-//
-//        btn1.setOnClickListener(new View.OnClickListener() {
-//            public void onClick(View arg0) {
-//                Intent intent = new Intent(MainActivity.this, SubActivity1.class);
-//                startActivity(intent);
-//            }
-//        });
-
-//        Button btn2 = (Button) findViewById(R.id.button2);
-//        btn2.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(MainActivity.this, SubActivity2.class);
-//                startActivity(intent);
-//            }
-//        });
-
+        Button btn_arraylist_listview = (Button) findViewById(R.id.btn_arraylist_listview);
+        
     }
 
-    public void sumNumber(View view){
-        EditText edit1 = (EditText) findViewById(R.id.editText1);
-        EditText edit2 = (EditText) findViewById(R.id.editText2);
-        TextView txt1 = (TextView) findViewById(R.id.Tong);
-        int a,b;
-        try {
-             a = Integer.parseInt(edit1.getText().toString());
-             b = Integer.parseInt(edit2.getText().toString());
-        }
-        catch (Exception e){
-             a =1;
-             b= 1;
-        }
-        txt1.setText(String.valueOf(a+b));
-    }
 
     @Override
     protected void onResume() {
         super.onResume();
-        Toast.makeText(this,"onResume",Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "onResume", Toast.LENGTH_LONG).show();
     }
 
 
     @Override
     protected void onStop() {
         super.onStop();
-        Toast.makeText(this,"onStop", Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "onStop", Toast.LENGTH_LONG).show();
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        Toast.makeText(this,"onDestroy",Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "onDestroy", Toast.LENGTH_LONG).show();
     }
 
     @Override

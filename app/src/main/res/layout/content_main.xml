@@ -1,16 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.example.framgianguyenhuyquyet.demo.MainActivity"
-    tools:showIn="@layout/activity_main">
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    tools:context="com.example.framgianguyenhuyquyet.demo.MainActivity">
 
-
+    <Button
+        android:id="@+id/btn_arraylist_listview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="@string/activity_array_list"
+        android:textAlignment="center"
+        android:background="#cccccc"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:layout_marginTop="50dp" />
+    <Button
+        android:id="@+id/btn_arraylist_listview_object"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="@string/activity_array_list_1"
+        android:textAlignment="center"
+        android:background="#cccccc"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_below="@+id/btn_arraylist_listview"/>
+    <Button
+        android:id="@+id/btn_list_activity_listview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="@string/list_activity_listview"
+        android:textAlignment="center"
+        android:background="#cccccc"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_below="@+id/btn_arraylist_listview_object"/>
 </RelativeLayout>
