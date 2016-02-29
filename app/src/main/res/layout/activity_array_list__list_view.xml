@@ -24,6 +24,8 @@
         android:layout_alignBaseline="@+id/txtTen"
         android:layout_alignBottom="@+id/txtTen"
         android:layout_alignParentStart="true"
+        android:paddingRight="20dp"
+        android:textAlignment="center"
         android:background="#deb887"
         android:text="Nhap ten" />
 
@@ -54,4 +56,14 @@
         android:background="#cccccc">
 
     </ListView>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back"
+        android:id="@+id/btn_back"
+        android:layout_below="@+id/txtTen"
+        android:layout_alignParentStart="true"
+        android:layout_alignEnd="@+id/textView1"
+        android:layout_alignBottom="@+id/btnNhap" />
 </RelativeLayout>

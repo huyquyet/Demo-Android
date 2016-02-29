@@ -16,7 +16,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 public class ArrayList_ListView extends AppCompatActivity {
-    Button btnNhap;
+    Button btnNhap, btn_back;
     ListView lv;
     TextView txtSelection;
     EditText editNhap;
@@ -31,6 +31,7 @@ public class ArrayList_ListView extends AppCompatActivity {
         lv = (ListView) findViewById(R.id.lvPerson);
         txtSelection = (TextView) findViewById(R.id.txtselection);
         editNhap = (EditText) findViewById(R.id.txtTen);
+        btn_back = (Button) findViewById(R.id.btn_back);
         danhsach = new ArrayList<String>();
         adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, danhsach);
         lv.setAdapter(adapter);
@@ -82,6 +83,12 @@ public class ArrayList_ListView extends AppCompatActivity {
                 });
                 confirm.create().show();
                 return false;
+            }
+        });
+        btn_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
             }
         });
     }

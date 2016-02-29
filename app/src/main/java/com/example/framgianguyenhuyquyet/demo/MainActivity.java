@@ -24,7 +24,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-    Button btnNhap;
+    Button btn_arraylist_listview, btn_arraylist_listview_object, btn_list_activity_listview;
     ListView lv;
     TextView txtSelection;
     EditText editNhap;
@@ -46,10 +46,41 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
-        Button btn_arraylist_listview = (Button) findViewById(R.id.btn_arraylist_listview);
-        
+        getControl();
+        click();
     }
 
+    private void getControl() {
+        btn_arraylist_listview = (Button) findViewById(R.id.btn_arraylist_listview);
+        btn_list_activity_listview = (Button) findViewById(R.id.btn_list_activity_listview);
+        btn_arraylist_listview_object = (Button) findViewById(R.id.btn_arraylist_listview_object);
+    }
+
+    private void click() {
+        btn_arraylist_listview.setOnClickListener(new myEventClick());
+        btn_list_activity_listview.setOnClickListener(new myEventClick());
+        btn_arraylist_listview_object.setOnClickListener(new myEventClick());
+    }
+
+    public class myEventClick implements View.OnClickListener {
+        @Override
+        public void onClick(View v) {
+            switch (v.getId()) {
+                case R.id.btn_arraylist_listview:
+                    Intent intent = new Intent(MainActivity.this, ArrayList_ListView.class);
+                    startActivity(intent);
+                    break;
+                case R.id.btn_arraylist_listview_object:
+                    Intent intent1 = new Intent(MainActivity.this, ArrayList_ListView.class);
+                    startActivity(intent1);
+                    break;
+                case R.id.btn_list_activity_listview:
+                    Intent intent2 = new Intent(MainActivity.this, ArrayList_ListView.class);
+                    startActivity(intent2);
+                    break;
+            }
+        }
+    }
 
     @Override
     protected void onResume() {
