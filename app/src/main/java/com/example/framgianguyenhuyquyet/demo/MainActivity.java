@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(intent);
                     break;
                 case R.id.btn_arraylist_listview_object:
-                    Intent intent1 = new Intent(MainActivity.this, ArrayList_ListView.class);
+                    Intent intent1 = new Intent(MainActivity.this, ArrayList_ListView_Object.class);
                     startActivity(intent1);
                     break;
                 case R.id.btn_list_activity_listview:

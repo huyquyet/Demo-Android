@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".ArrayList_ListView_Object"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#008800"
+        android:gravity="center"
+        android:text="Quan Ly Nhan Vien"
+        android:textColor="#FFFFFF"
+        android:textSize="20dp" />
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:stretchColumns="*">
+
+        <TableRow
+            android:id="@+id/tableRow1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ma NV" />
+
+            <EditText
+                android:id="@+id/editMa"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_span="2"
+                android:ems="10">
+
+                <requestFocus />
+            </EditText>
+        </TableRow>
+        <TableRow
+            android:id="@+id/tableRow2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ten NV" />
+
+            <EditText
+                android:id="@+id/editTenNV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_span="2"
+                android:ems="10">
+
+            </EditText>
+        </TableRow>
+        <TableRow
+            android:id="@+id/tableRow3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Loai NV" />
+
+            <RadioGroup
+                android:id="@+id/radioGroupButton1"
+                android:orientation="horizontal"
+                android:gravity="center_horizontal">
+                <RadioButton
+                    android:id="@+id/radioNVFullTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Full Time"
+                    android:checked="true"/>
+                <RadioButton
+                    android:id="@+id/radioNVPartTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Part Time" />
+            </RadioGroup>
+        </TableRow>
+        <TableRow
+            android:id="@+id/tableRow4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <Button
+                android:id="@+id/btn_back_object"
+                android:layout_width="wrap_content"
+                android:text="Back"/>
+            <Button
+                android:id="@+id/btnNhapNV"
+                android:layout_column="1"
+                android:text="Nhap"
+                />
+        </TableRow>
+    </TableLayout>
+    <ListView
+        android:id="@+id/lvEmployee"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#bcbcbc">
+
+    </ListView>
+</LinearLayout>

@@ -20,9 +20,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ArrayList_ListView">
-
-        </activity>
+        <activity android:name=".ArrayList_ListView"></activity>
+        <activity android:name=".ArrayList_ListView_Object"></activity>
     </application>
 
 </manifest>
