@@ -28,10 +28,6 @@
         <!-- android:name=".SubActivity2" -->
         <!-- android:label="@string/title_activity_sub2"> -->
         <!-- </activity> -->
-        <activity
-            android:name=".ControlActivity"
-            android:label="@string/title_activity_control"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
