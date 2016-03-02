@@ -40,12 +40,12 @@ public class MyArrayAdapter extends ArrayAdapter<Student> {
         if (arrayList.size() > 0 && position >= 0) {
             final TextView textView = (TextView) convertView.findViewById(R.id.txtMaVaTen);
             final TextView textView1 = (TextView) convertView.findViewById(R.id.txtThongTinKhac);
-            final CheckBox checkBox = (CheckBox) convertView.findViewById(R.id.checkbox_chon);
+//            final CheckBox checkBox = (CheckBox) convertView.findViewById(R.id.checkbox_chonSV);
             Student student = arrayList.get(position);
             textView.setText(String.valueOf(student.getId() + '-' + student.getName()));
             SimpleDateFormat simpleFormatter = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
             textView1.setText(String.valueOf((student.isGender() ? "Nữ-" : "Nam-") + simpleFormatter.format(student.getBrithday()) + student.getPlaceOfBirth()));
-            checkBox.setChecked(false);
+//            checkBox.setChecked(false);
         }
         return convertView;
     }

@@ -1,6 +1,8 @@
 package com.example.framgianguyenhuyquyet.demo;
 
+import android.app.AlertDialog;
 import android.app.DatePickerDialog;
+import android.content.DialogInterface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -10,6 +12,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.RadioGroup;
 import android.widget.Toast;
@@ -24,7 +27,8 @@ public class AutoCompleteTextView_Runtime extends AppCompatActivity {
     ListView lv_sinhvien;
     EditText editMa, editTen, editNamsinh;
     RadioGroup radioGroup_gender;
-    Button btnNamsinh, btnNhapsv;
+    Button btnNamsinh, btnNhapsv ;
+    ImageButton btn_delete;
 
     MyArrayAdapter adapterSinhVien;
     ArrayList<Student> arrSinhVien = new ArrayList<Student>();
@@ -49,6 +53,7 @@ public class AutoCompleteTextView_Runtime extends AppCompatActivity {
         autoCompleteTextView = (AutoCompleteTextView) findViewById(R.id.autoCompleteNS);
         btnNamsinh = (Button) findViewById(R.id.btnNgaySinh);
         btnNhapsv = (Button) findViewById(R.id.btnNhap);
+        btn_delete = (ImageButton) findViewById(R.id.btn_delete);
         lv_sinhvien = (ListView) findViewById(R.id.lvsinhvien);
         adapterSinhVien = new MyArrayAdapter(this, R.layout.custom_listview_layout, arrSinhVien);
 
@@ -62,7 +67,7 @@ public class AutoCompleteTextView_Runtime extends AppCompatActivity {
                 DatePickerDialog.OnDateSetListener callBack = new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-                        editNamsinh.setText(String.valueOf(dayOfMonth + "/" + monthOfYear  + "/" + year));
+                        editNamsinh.setText(String.valueOf(dayOfMonth + "/" + monthOfYear + "/" + year));
                     }
 
                 };
@@ -93,6 +98,33 @@ public class AutoCompleteTextView_Runtime extends AppCompatActivity {
                 } catch (Exception e) {
                     Toast.makeText(AutoCompleteTextView_Runtime.this, "Loi roi cha noi " + e.toString(), Toast.LENGTH_LONG).show();
                 }
+            }
+        });
+        btn_delete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(AutoCompleteTextView_Runtime.this);
+                builder.setTitle("Xoa nhan vien");
+                builder.setMessage("May lai muon xoa nua ah");
+                builder.setNegativeButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        for (int i = lv_sinhvien.getChildCount() - 1; i >= 0; i--) {
+                            View view = lv_sinhvien.getChildAt(i);
+                            CheckBox checkBox = (CheckBox) view.findViewById(R.id.checkbox_chonSV);
+                            if (checkBox.isChecked())
+                                arrSinhVien.remove(i);
+                        }
+                        adapterSinhVien.notifyDataSetChanged();
+                    }
+                });
+                builder.setPositiveButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                    }
+                });
+                builder.create().show();
             }
         });
 

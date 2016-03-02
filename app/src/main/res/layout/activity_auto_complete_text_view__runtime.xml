@@ -23,7 +23,8 @@
             android:background="#008000"
             android:gravity="center"
             android:text="@string/nhap_thong_tin_sinh_vien"
-            android:textColor="#FFFFFF" />
+            android:textColor="#FFFFFF"
+            android:padding="2dp"/>
 
         <TableLayout
             android:layout_width="wrap_content"
@@ -191,12 +192,13 @@
                 android:layout_weight="9"
                 android:gravity="center"
                 android:text="Danh Sách Sinh Viên:"
-                android:textColor="#FFFFFF" />
+                android:textColor="#FFFFFF"
+                android:padding="2dp"/>
 
             <ImageButton
-                android:id="@+id/btndelete"
-                android:layout_width="20dip"
-                android:layout_height="30dip"
+                android:id="@+id/btn_delete"
+                android:layout_width="10dip"
+                android:layout_height="20dip"
                 android:layout_weight="1"
                 android:src="@drawable/deleteicon" />
         </LinearLayout>
