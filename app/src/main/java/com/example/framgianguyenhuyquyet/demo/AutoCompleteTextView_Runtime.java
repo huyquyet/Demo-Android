@@ -27,7 +27,7 @@ public class AutoCompleteTextView_Runtime extends AppCompatActivity {
     ListView lv_sinhvien;
     EditText editMa, editTen, editNamsinh;
     RadioGroup radioGroup_gender;
-    Button btnNamsinh, btnNhapsv ;
+    Button btnNamsinh, btnNhapsv;
     ImageButton btn_delete;
 
     MyArrayAdapter adapterSinhVien;
@@ -67,7 +67,7 @@ public class AutoCompleteTextView_Runtime extends AppCompatActivity {
                 DatePickerDialog.OnDateSetListener callBack = new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-                        editNamsinh.setText(String.valueOf(dayOfMonth + "/" + monthOfYear + "/" + year));
+                        editNamsinh.setText(String.valueOf(dayOfMonth + "/" + (monthOfYear + 1) + "/" + year));
                     }
 
                 };
