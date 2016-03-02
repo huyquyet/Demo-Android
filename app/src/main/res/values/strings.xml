@@ -1,9 +1,10 @@
 <resources>
     <string name="app_name">Demo</string>
     <string name="action_settings">Settings</string>
-    <string name="title_activity_sub1">SubActivity1</string>
-    <string name="title_activity_sub2">SubActivity2</string>
-    <string name="title_activity_control">ControlActivity</string>
-    <string name="title_ControlActivity">Chuong trinh tinh toan online</string>
-    <string name="title_ControlActivity_hoaDon">Thong tin hoa don</string>
+    <string name="quan_ly_san_pham">Quan Ly San Pham</string>
+    <string name="danh_muc">Danh Muc</string>
+    <string name="ma_SP">Ma SP</string>
+    <string name="ten_SP">Ten SP</string>
+    <string name="btn_nhapSP">Nhap</string>
+    <string name="danh_sach_san_pham_theo_danh_muc">Danh sach san pham theo danh muc</string>
 </resources>
