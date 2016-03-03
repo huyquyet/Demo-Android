@@ -19,15 +19,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <!-- <activity -->
-        <!-- android:name=".SubActivity1" -->
-        <!-- android:label="@string/title_activity_sub1" -->
-        <!-- > -->
-        <!-- </activity> -->
-        <!-- <activity -->
-        <!-- android:name=".SubActivity2" -->
-        <!-- android:label="@string/title_activity_sub2"> -->
-        <!-- </activity> -->
     </application>
 
 </manifest>
