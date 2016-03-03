@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.framgianguyenhuyquyet.demo">
+
     <!-- android:theme="@android:style/Theme.Dialog" -->
     <!-- android:theme="@style/AppTheme.NoActionBar" -->
     <application
@@ -13,21 +14,16 @@
             android:name=".MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
+            
+        </activity>
+
+        <activity android:name=".TabSelector_Activity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <!-- <activity -->
-        <!-- android:name=".SubActivity1" -->
-        <!-- android:label="@string/title_activity_sub1" -->
-        <!-- > -->
-        <!-- </activity> -->
-        <!-- <activity -->
-        <!-- android:name=".SubActivity2" -->
-        <!-- android:label="@string/title_activity_sub2"> -->
-        <!-- </activity> -->
     </application>
 
 </manifest>
