@@ -4,24 +4,23 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.app.Activity;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.ContextMenu;
-import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.framgianguyenhuyquyet.demo.R;
 import com.example.framgianguyenhuyquyet.demo.adapter.PhongBanAdapter;
+import com.example.framgianguyenhuyquyet.demo.model.ChucVu;
 import com.example.framgianguyenhuyquyet.demo.model.NhanVien;
 import com.example.framgianguyenhuyquyet.demo.model.PhongBan;
 
@@ -63,12 +62,40 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
-
         getControl();
         clickEvent();
-
+        fakeData();
     }
 
+    public void fakeData() {
+        NhanVien nv = null;
+        PhongBan pb = new PhongBan("pb1", "Kỹ thuật");
+        nv = new NhanVien("m4", "Đoàn Ái Nương", true);
+        nv.setChucVu(ChucVu.TruongPhong);
+        pb.themNV(nv);
+        nv = new NhanVien("m5", "Trần Đạo Đức", false);
+        nv.setChucVu(ChucVu.PhoPhong);
+        pb.themNV(nv);
+        nv = new NhanVien("m6", "Nguyễn Đại Tài", false);
+        nv.setChucVu(ChucVu.PhoPhong);
+        pb.themNV(nv);
+        arrPhongBan.add(pb);
+        pb = new PhongBan("pb2", "Dịch vụ");
+        arrPhongBan.add(pb);
+        pb = new PhongBan("pb3", "Truyền thông");
+        arrPhongBan.add(pb);
+        nv = new NhanVien("m1", "Nguyễn Văn Tẻo", false);
+        nv.setChucVu(ChucVu.NhanVien);
+        pb.themNV(nv);
+        nv = new NhanVien("m2", "Nguyễn Thị Téo", true);
+        nv.setChucVu(ChucVu.TruongPhong);
+        pb.themNV(nv);
+        nv = new NhanVien("m3", "Nguyễn Văn Teo", false);
+        nv.setChucVu(ChucVu.NhanVien);
+        pb.themNV(nv);
+
+        adapterPB.notifyDataSetChanged();
+    }
 
     private void getControl() {
         btn_luuPhongBan = (Button) findViewById(R.id.btnluupb);
@@ -107,6 +134,9 @@ public class MainActivity extends AppCompatActivity {
         PhongBan phongBan = new PhongBan(ma_PB, ten_PB);
         arrPhongBan.add(phongBan);
         adapterPB.notifyDataSetChanged();
+        edit_maPB.setText("");
+        edit_tenPB.setText("");
+        edit_maPB.requestFocus();
     }
 
     //  Dang ky su kien khi click vao list view
@@ -127,7 +157,8 @@ public class MainActivity extends AppCompatActivity {
                 doDanhSachNhanVien();
                 break;
             case R.id.mnutruongphong:
-                doThietLapLanhDao();
+//                doThietLapLanhDao();
+                Toast.makeText(this, "Chua lam gi", Toast.LENGTH_LONG).show();
                 break;
             case R.id.mnuxoapb:
                 doXoaPhongBan();

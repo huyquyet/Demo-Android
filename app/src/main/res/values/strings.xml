@@ -1,4 +1,15 @@
 <resources>
     <string name="app_name">Quan ly nhan vien</string>
     <string name="action_settings">Settings</string>
+
+    <!--    ContextMenu Phong Ban  -->
+    <string name="menu_them_nhan_vien">Them nhan vien</string>
+    <string name="menu_danh_sach_nhan_vien">Danh sach nhan vien</string>
+    <string name="menu_truong_phong">Truong phong</string>
+    <string name="menu_xoa_phong_ban">Xoa phong ban</string>
+    <!--    ContextMenu Nhan Vien  -->
+    <string name="menu_sua_nhan_vien">Sua nhan vien</string>
+    <string name="menu_chuyen_phong_ban">Chuyen phong ban</string>
+    <string name="menu_xoa_nhan_vien">Xoa nhan vien</string>
+
 </resources>

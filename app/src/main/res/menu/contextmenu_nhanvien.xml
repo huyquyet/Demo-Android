@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/mnusuanv"
+        android:title="@string/menu_sua_nhan_vien">
+
+    </item>
+    <item
+        android:id="@+id/mnuchuyenpb"
+        android:title="@string/menu_chuyen_phong_ban">
+
+    </item>
+    <item
+        android:id="@+id/mnuxoanv"
+        android:title="@string/menu_xoa_nhan_vien">
+
+    </item>
+
+</menu>
