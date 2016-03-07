@@ -16,15 +16,23 @@
             android:theme="@style/AppTheme.NoActionBar">
 
         </activity>
-        <activity android:name=".Login_Share_PreferencesActivity">
+        <activity android:name=".basic_share_preferences.Login_Share_PreferencesActivity">
+
+        </activity>
+        <activity android:name=".basic_share_preferences.LoginSuccessActivity">
+
+        </activity>
+        <activity
+            android:name=".MySettingActivity"
+            android:label="MySetting..">
+
+        </activity>
+        <activity android:name=".ExampleSettingActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity android:name=".LoginSuccessActivity">
-
         </activity>
     </application>
 

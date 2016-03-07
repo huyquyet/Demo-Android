@@ -8,19 +8,11 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".basic_share_preferences.LoginSuccessActivity">
-
-    <TextView
-        android:id="@+id/txtmsg"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        android:textSize="20sp" />
+    tools:context="com.example.framgianguyenhuyquyet.demo.ExampleSettingActivity">
 
     <Button
-        android:id="@+id/btnThoat"
-        android:layout_width="wrap_content"
+        android:id="@+id/btn_mySetting"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="@string/btn_thoat" />
+        android:text="Setting" />
 </LinearLayout>
