@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">Demo</string>
     <string name="action_settings">Settings</string>
+
+    <string-array name="myarray">
+        <item>Xuan</item>
+        <item>Ha</item>
+        <item>Thu</item>
+        <item>Dong</item>
+    </string-array>
 </resources>
