@@ -1,4 +1,30 @@
 <resources>
     <string name="app_name">Demo</string>
     <string name="action_settings">Settings</string>
+    // TextView
+    <string name="txt_quanLySach">Quan Ly Sach</string>
+    <string name="txt_themMoiTacGia">Them moi tac gia</string>
+    <string name="txt_maTacGia">Ma tac gia :</string>
+    <string name="txt_tenTacGia">Ten tac gia :</string>
+    <string name="txt_viewDetail">View detail</string>
+    <string name="txt_tacGia">Tac gia :</string>
+    <string name="txt_tenSach">Ten Sach :</string>
+    <string name="txt_NXB">NXB :</string>
+
+    /**
+    Button
+    */
+    <string name="btn_themTacGia">Them Tac Gia</string>
+    <string name="btn_xemDanhSachTacGia">Xem Danh Sach Tac Gia</string>
+    <string name="btn_quanLySach">Quan Ly Sach</string>
+    <string name="btn_luuTacGia">Luu Tac Gia</string>
+    <string name="btn_xoaTrang">Xoa Trang</string>
+    <string name="btn_themSach">Them Sach</string>
+
+    /**
+    Context Menu
+    */
+
+    <string name="menu_edit_author"> Edit</string>
+    <string name="menu_delete_author"> Delete</string>
 </resources>
