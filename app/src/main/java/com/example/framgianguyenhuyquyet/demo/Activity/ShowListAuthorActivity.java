@@ -8,6 +8,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.ContextMenu;
 import android.view.MenuItem;
 import android.view.View;
@@ -40,21 +41,35 @@ public class ShowListAuthorActivity extends AppCompatActivity {
         registerForContextMenu(listView);
     }
 
+    private boolean isDatabaseExists(SQLiteDatabase database, String tableName) {
+        Cursor cursor = database.rawQuery("Select DISTINCT tbl_name from sqlite_master where tbl_name = '" + tableName + "'", null);
+        if (cursor != null) {
+            if (cursor.getCount() > 0) {
+                cursor.close();
+                return true;
+            }
+            cursor.close();
+        }
+        return false;
+    }
+
     private void getData() {
         database = openOrCreateDatabase("mydata.db", SQLiteDatabase.CREATE_IF_NECESSARY, null);
         if (database != null) {
-            cursor = database.query("tblAuthor", null, null, null, null, null, null);
-            startManagingCursor(cursor);
-            cursor.moveToFirst();
-            while (!cursor.isAfterLast()) {
-                Author data = new Author();
-                data.setId(cursor.getString(0));
-                data.setFirstname(cursor.getString(1));
-                data.setLastname(cursor.getString(2));
-                arrayList.add(data);
-                cursor.moveToNext();
-            }
-            cursor.close();
+            if (isDatabaseExists(database, "tblAuthor")) {
+                cursor = database.query("tblAuthor", null, null, null, null, null, null);
+                cursor.moveToFirst();
+                while (!cursor.isAfterLast()) {
+                    Author data = new Author();
+                    data.setId(cursor.getString(0));
+                    data.setFirstname(cursor.getString(1));
+                    data.setLastname(cursor.getString(2));
+                    arrayList.add(data);
+                    cursor.moveToNext();
+                }
+                cursor.close();
+            } else
+                Toast.makeText(ShowListAuthorActivity.this, "Loi truy xuat co so du lieu", Toast.LENGTH_LONG).show();
         }
     }
 
@@ -101,8 +116,8 @@ public class ShowListAuthorActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+        Log.d("onActivityResult", "go onActivityResult");
         if (resultCode == SqliteActivity.EDIT_AUTHOR_SUCCESS) {
-//            Intent intent = data;
             Bundle bundle = data.getBundleExtra("DATA");
             Author author = (Author) bundle.getSerializable("AUTHOR");
 

@@ -3,6 +3,7 @@ package com.example.framgianguyenhuyquyet.demo.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -56,6 +57,7 @@ public class EditAuthorActivity extends AppCompatActivity {
         btn_luuTacGia.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Log.d("EDIT", "click edit");
                 author.setFirstname(edit_maTacGia.getText().toString());
                 author.setLastname(edit_tenTacGia.getText().toString());
                 Bundle bundle = new Bundle();

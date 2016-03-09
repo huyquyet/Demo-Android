@@ -6,6 +6,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -21,7 +22,7 @@ public class SqliteActivity extends AppCompatActivity {
     public static final int EDIT_AUTHOR_SUCCESS = 4;
     private SQLiteDatabase database = null;
 
-    Button btn_themTacGia, btn_xemDanhSachTacGia, btn_quanLySach;
+    Button btn_themTacGia, btn_xemDanhSachTacGia, btn_quanLySach, btn_deleteData;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,9 +71,11 @@ public class SqliteActivity extends AppCompatActivity {
                 /**
                  * Create table tblBook
                  */
-                String sqlBook = "create table tblBooks(" +
+                String sqlBook = "create table tblBooks (" +
                         "id integer primary key autoincrement," +
-                        "title text" + "dateadded text)";
+                        "title text," +
+                        "dateadded text,"+
+                        "author_id integer not null constraint author_id references tblAuthor(id) on delete cascade)";
                 database.execSQL(sqlBook);
 
                 /**
@@ -82,15 +85,24 @@ public class SqliteActivity extends AppCompatActivity {
                         + " for each row "
                         + " begin "
                         + " select raise(rollback,'them du lieu tren bang tblBooks bi sai') "
-                        + " where (select id from tblAuthors where id=new.authorid) is null ;"
+                        + " where (select id from tblAuthor where id=new.author_id) is null ;"
                         + " end;";
                 database.execSQL(sqlTrigger);
                 Toast.makeText(this, "Create dataBase success", Toast.LENGTH_LONG).show();
             }
         } catch (Exception ex) {
-
+            Log.d("error", ex.toString());
         }
         return database;
+    }
+
+    private void delete_Database() {
+        String msg = "";
+        if (deleteDatabase("mydata.db")) {
+            msg = " Delete data success !";
+        } else
+            msg = " Delete data error !";
+        Toast.makeText(SqliteActivity.this, msg, Toast.LENGTH_LONG).show();
     }
 
     private boolean isDatabaseExists(SQLiteDatabase database, String tableName) {
@@ -109,6 +121,7 @@ public class SqliteActivity extends AppCompatActivity {
         btn_themTacGia = (Button) findViewById(R.id.btn_themTacGia);
         btn_xemDanhSachTacGia = (Button) findViewById(R.id.btn_xemDanhSachTacGia);
         btn_quanLySach = (Button) findViewById(R.id.btn_quanLySach);
+        btn_deleteData = (Button) findViewById(R.id.btn_deleteData);
     }
 
     private void clickEvent() {
@@ -130,7 +143,14 @@ public class SqliteActivity extends AppCompatActivity {
         btn_quanLySach.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(SqliteActivity.this, InsertBookActivity.class);
+                startActivity(intent);
+            }
+        });
+        btn_deleteData.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                delete_Database();
             }
         });
     }

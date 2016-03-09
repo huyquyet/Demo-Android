@@ -16,22 +16,32 @@
         android:layout_height="wrap_content"
         android:background="#008000"
         android:gravity="center"
-        android:textSize="20sp"
-        android:text="@string/txt_quanLySach"/>
+        android:text="@string/txt_quanLySach"
+        android:textSize="20sp" />
+
     <Button
         android:id="@+id/btn_themTacGia"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/btn_themTacGia"/>
+        android:text="@string/btn_themTacGia" />
+
     <Button
         android:id="@+id/btn_xemDanhSachTacGia"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/btn_xemDanhSachTacGia"/>
+        android:text="@string/btn_xemDanhSachTacGia" />
+
     <Button
         android:id="@+id/btn_quanLySach"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:text="@string/btn_quanLySach"/>
+        android:text="@string/btn_quanLySach" />
+
+    <Button
+        android:id="@+id/btn_deleteData"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Delete database" />
 </LinearLayout>

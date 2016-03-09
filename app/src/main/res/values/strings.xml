@@ -9,7 +9,7 @@
     <string name="txt_viewDetail">View detail</string>
     <string name="txt_tacGia">Tac gia :</string>
     <string name="txt_tenSach">Ten Sach :</string>
-    <string name="txt_NXB">NXB :</string>
+    <string name="txt_NXB">Ngay XB :</string>
 
     /**
     Button
@@ -20,6 +20,7 @@
     <string name="btn_luuTacGia">Luu Tac Gia</string>
     <string name="btn_xoaTrang">Xoa Trang</string>
     <string name="btn_themSach">Them Sach</string>
+    <string name="btn_back">Back</string>
 
     /**
     Context Menu
