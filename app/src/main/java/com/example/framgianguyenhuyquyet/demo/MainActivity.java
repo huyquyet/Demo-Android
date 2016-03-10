@@ -2,20 +2,18 @@ package com.example.framgianguyenhuyquyet.demo;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.app.Activity;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
-import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
+    Button btn_1, btn_2, btn_3;
+    Intent intent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,31 +30,33 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
-
-    }
-    @Override
-    protected void onResume() {
-        super.onResume();
-        Toast.makeText(this,"onResume",Toast.LENGTH_LONG).show();
-    }
-
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        Toast.makeText(this,"onStop", Toast.LENGTH_LONG).show();
+        btn_1 = (Button) findViewById(R.id.btn_1);
+        btn_2 = (Button) findViewById(R.id.btn_2);
+        btn_3 = (Button) findViewById(R.id.btn_3);
+        btn_1.setOnClickListener(new MyClick());
+        btn_3.setOnClickListener(new MyClick());
+        btn_2.setOnClickListener(new MyClick());
     }
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        Toast.makeText(this,"onDestroy",Toast.LENGTH_LONG).show();
-    }
+    private class MyClick implements View.OnClickListener {
 
-    @Override
-    protected void onPause() {
-        super.onPause();
-        Toast.makeText(this, "onPause", Toast.LENGTH_LONG).show();
+        @Override
+        public void onClick(View v) {
+            switch (v.getId()) {
+                case R.id.btn_1:
+                    intent = new Intent(MainActivity.this, ProgressBarActivity.class);
+                    startActivity(intent);
+                    break;
+                case R.id.btn_2:
+                    intent = new Intent(MainActivity.this, CreateRuntimeButtonActivity.class);
+                    startActivity(intent);
+                    break;
+                case R.id.btn_3:
+                    intent = new Intent(MainActivity.this, UsingPostActivity.class);
+                    startActivity(intent);
+                    break;
+            }
+        }
     }
 
     @Override
