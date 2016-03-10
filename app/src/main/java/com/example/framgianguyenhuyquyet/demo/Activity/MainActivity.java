@@ -1,5 +1,6 @@
-package com.example.framgianguyenhuyquyet.demo;
+package com.example.framgianguyenhuyquyet.demo.Activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -9,13 +10,12 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ProgressBar;
-import android.widget.TextView;
+
+import com.example.framgianguyenhuyquyet.demo.R;
 
 public class MainActivity extends AppCompatActivity {
-    Button btn_click;
-    TextView textView_1;
-    ProgressBar bar_1;
+    Button btn_process, btn_fibonacci;
+    Intent intent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,18 +32,27 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
-        btn_click = (Button) findViewById(R.id.btn_click);
-        textView_1 = (TextView) findViewById(R.id.textView_1);
-        bar_1 = (ProgressBar) findViewById(R.id.progressBar_1);
-        btn_click.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                MyAsyncTask myAsyncTask = new MyAsyncTask(MainActivity.this);
-                myAsyncTask.execute();
-            }
-        });
-
+        btn_process = (Button) findViewById(R.id.btn_process);
+        btn_fibonacci = (Button) findViewById(R.id.btn_fibonacci);
+        btn_process.setOnClickListener(MyClick);
+        btn_fibonacci.setOnClickListener(MyClick);
     }
+
+    View.OnClickListener MyClick = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            switch (v.getId()) {
+                case R.id.btn_process:
+                    intent = new Intent(MainActivity.this, ProcessBarActivity.class);
+                    startActivity(intent);
+                    break;
+                case R.id.btn_fibonacci:
+                    intent = new Intent(MainActivity.this, FibonacciActivity.class);
+                    startActivity(intent);
+                    break;
+            }
+        }
+    };
 
 
     @Override

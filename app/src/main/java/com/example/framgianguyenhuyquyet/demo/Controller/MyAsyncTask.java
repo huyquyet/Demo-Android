@@ -1,4 +1,4 @@
-package com.example.framgianguyenhuyquyet.demo;
+package com.example.framgianguyenhuyquyet.demo.Controller;
 
 import android.app.Activity;
 import android.os.AsyncTask;
@@ -6,6 +6,8 @@ import android.os.SystemClock;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.framgianguyenhuyquyet.demo.R;
 
 /**
  * Created by FRAMGIA\nguyen.huy.quyet on 10/03/2016.
