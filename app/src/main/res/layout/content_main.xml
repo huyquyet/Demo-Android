@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
@@ -12,66 +13,28 @@
     tools:context="com.example.framgianguyenhuyquyet.demo.MainActivity"
     tools:showIn="@layout/activity_main">
 
-    <Button
-        android:layout_width="wrap_content"
+    <TextView
+        android:id="@+id/textView_1"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Sum"
-        android:id="@+id/Sub1"
-        android:layout_below="@+id/txtTong"
-        android:layout_alignParentStart="true"
         android:layout_marginTop="47dp"
-        android:onClick="sumNumber" />
+        android:background="#008000"
+        android:textColor="#FFFFFF" />
 
-    <TextView
+    <ProgressBar
+        android:id="@+id/progressBar_1"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="100"
+        android:minHeight="50dp" />
+
+    <Button
+        android:id="@+id/btn_click"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Number 1"
-        android:id="@+id/txtSo1"
-        android:layout_marginTop="30dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true" />
+        android:layout_gravity="center"
+        android:text="Start" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Number 2"
-        android:id="@+id/txtSo2"
-        android:layout_below="@+id/txtSo1"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="25dp" />
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/editText1"
-        android:layout_above="@+id/txtSo2"
-        android:layout_toEndOf="@+id/txtSo1" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/editText2"
-        android:layout_alignBottom="@+id/txtSo2"
-        android:layout_toEndOf="@+id/Tong" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Tong "
-        android:id="@+id/txtTong"
-        android:layout_below="@+id/txtSo2"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="24dp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:id="@+id/Tong"
-        android:layout_alignBottom="@+id/txtTong"
-        android:layout_toEndOf="@+id/txtSo2" />
-
-</RelativeLayout>
+</LinearLayout>

@@ -1,21 +1,21 @@
 package com.example.framgianguyenhuyquyet.demo;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.app.Activity;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
+    Button btn_click;
+    TextView textView_1;
+    ProgressBar bar_1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,32 +32,19 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+        btn_click = (Button) findViewById(R.id.btn_click);
+        textView_1 = (TextView) findViewById(R.id.textView_1);
+        bar_1 = (ProgressBar) findViewById(R.id.progressBar_1);
+        btn_click.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MyAsyncTask myAsyncTask = new MyAsyncTask(MainActivity.this);
+                myAsyncTask.execute();
+            }
+        });
 
     }
-    @Override
-    protected void onResume() {
-        super.onResume();
-        Toast.makeText(this,"onResume",Toast.LENGTH_LONG).show();
-    }
 
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        Toast.makeText(this,"onStop", Toast.LENGTH_LONG).show();
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        Toast.makeText(this,"onDestroy",Toast.LENGTH_LONG).show();
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        Toast.makeText(this, "onPause", Toast.LENGTH_LONG).show();
-    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
