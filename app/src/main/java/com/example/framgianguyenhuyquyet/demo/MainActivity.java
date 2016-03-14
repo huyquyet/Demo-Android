@@ -13,6 +13,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {
+    ImageView image;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
-
+        image = (ImageView) findViewById(R.id.imageView);
 
     }
 
@@ -40,11 +41,29 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void zoom(View view) {
-        ImageView image = (ImageView) findViewById(R.id.imageView);
         Animation animation1 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.clockwise);
         image.startAnimation(animation1);
     }
 
+    public void fade(View view) {
+        Animation animation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fade);
+        image.startAnimation(animation);
+    }
+
+    public void blink(View view) {
+        Animation animation1 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.blink);
+        image.startAnimation(animation1);
+    }
+
+    public void move(View view) {
+        Animation animation1 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.move);
+        image.startAnimation(animation1);
+    }
+
+    public void slide(View view) {
+        Animation animation1 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.slide);
+        image.startAnimation(animation1);
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
